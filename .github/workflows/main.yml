@@ -39,7 +39,7 @@ jobs:
 
       - name: Run django test suite
         working-directory: ./src
-        run: python manage.py test
+        run: pipenv run python manage.py test
 
   check:
     runs-on: ubuntu-latest
@@ -64,7 +64,7 @@ jobs:
 
       - name: Run django check suite dev
         working-directory: ./src
-        run: python manage.py check --fail-level ERROR
+        run: pipenv run python manage.py check --fail-level ERROR
 
   lint:
     runs-on: ubuntu-latest
