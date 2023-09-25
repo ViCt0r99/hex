@@ -12,7 +12,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: db
+          POSTGRES_DB: github_actions
         ports:
           - "5432:5432"
     steps:
@@ -35,7 +35,7 @@ jobs:
 
       - name: Create .env file
         run:
-          cp .env.example .env
+          cp .env.github .env
 
       - name: Run django test suite
         working-directory: ./src
