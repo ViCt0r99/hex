@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+djangorestframework = "*"
+psycopg2-binary = "*"
+markdown = "*"
+django-filter = "*"
+django = "*"
+python-dotenv = "*"
+pillow = "*"
+
+[dev-packages]
+pytest = "*"
+prospector = "*"
+faker = "*"
+
+[requires]
+python_version = "3.11"

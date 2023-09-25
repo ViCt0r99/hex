@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  djangoapp:
+    restart: always
+    container_name: web
+    build: .
+    env_file: .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  db:
+    restart: always
+    image: postgres:13-alpine
+    env_file: .env
+    environment:
+      - POSTGRES_DB=${POSTGRES_DATABASE}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - hex-ocean-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  hex-ocean-postgres-data:
